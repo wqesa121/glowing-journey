@@ -58,5 +58,25 @@ ArticleSchema.index({ status: 1, tags: 1 });
 ArticleSchema.index({ status: 1, 'author.id': 1 });
 ArticleSchema.index({ status: 1, publishedAt: -1 });
 
+// Text index for full-text search
+ArticleSchema.index({
+  title: 'text',
+  metaTitle: 'text',
+  metaDescription: 'text',
+  excerpt: 'text',
+  content: 'text',
+  tags: 'text'
+}, { 
+  weights: {
+    title: 10,
+    metaTitle: 8,
+    metaDescription: 6,
+    excerpt: 5,
+    tags: 4,
+    content: 1
+  },
+  default_language: 'russian'
+});
+
 const Article = models.Article || model<ArticleDocument>('Article', ArticleSchema);
 export default Article;

@@ -82,8 +82,8 @@ function buildFilter(options: { tag?: string; search?: string; authorId?: string
   const parts: Record<string, unknown>[] = [base, publicVisibilityFilter];
 
   if (options.search?.trim()) {
-    const regex = new RegExp(options.search.trim(), 'i');
-    parts.push({ $or: [{ title: regex }, { excerpt: regex }, { tags: regex }, { metaDescription: regex }] });
+    // Use MongoDB text search instead of regex for better performance
+    parts.push({ $text: { $search: options.search.trim() } });
   }
 
   return parts.length === 1 ? parts[0] : { $and: parts };

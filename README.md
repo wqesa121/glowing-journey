@@ -4,82 +4,99 @@
 ![MongoDB](https://img.shields.io/badge/MongoDB-7-green?style=for-the-badge)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.5-blue?style=for-the-badge)
 ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.4-38B2AC?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
-NeuraCMS - это современная, быстрая и мощная headless CMS, разработанная с использованием Next.js, MongoDB и AI. Она предоставляет удобный интерфейс управления контентом, SEO-оптимизацию и поддержку интеграции с AI-инструментами.
+**NeuraCMS** — современная, быстрая и мощная headless CMS, разработанная с использованием Next.js 15, MongoDB и встроенным ИИ. Идеальна для автоматизированного управления контентом, SEO-оптимизации и использования в качестве API для фронтенд приложений.
+
+> 📚 **Для полной интерактивной документации API откройте**: http://localhost:3001/api-docs
 
 ## ✨ Основные возможности
 
-### 🎨 Интерфейс управления
-- **Интуитивный dashboard** - простое управление контентом и статьями
-- **Современный дизайн** - Sky/Cyan градиент с мягкими тенями
-- **Отзывчивая верстка** - работает на всех устройствах (mobile-first)
-- **TipTap редактор** - полнофункциональный Markdown-редактор с форматированием
+### 🎨 Dashboard & UI
+- **Интуитивный dashboard** - удобное управление статьями и пользователями
+- **Современный дизайн** - Sky/Cyan градиент с плавными анимациями
+- **Полнофункциональный редактор** - TipTap WYSIWYG с Markdown поддержкой
+- **Mobile-first** - отлично работает на всех устройствах
 
 ### 📝 Управление контентом
-- ✅ Создание, редактирование и удаление статей
-- ✅ Draft & Published статусы
+- ✅ CRUD операции для статей (Create, Read, Update, Delete)
+- ✅ Draft & Published статусы для контроля опубликованности
 - ✅ SEO-оптимизированные мета данные (title, description, slug)
-- ✅ Теги и категории
-- ✅ Избранные изображения (featured images)
-- ✅ Расширенные изображения (galleries)
-- ✅ Поиск и фильтрация по статьям
+- ✅ Система тегов и категоризации
+- ✅ Поддержка изображений (featured image + gallery)
+- ✅ Полнотекстовый поиск по статьям
 
-### 👥 Аутентификация и управление пользователями
-- ✅ Email-based регистрация и вход
-- ✅ NextAuth для управления сессиями
-- ✅ Ролевое управление доступом (Admin/User)
-- ✅ Администраторская панель управления пользователями
+### 👥 Пользователи и доступ
+- ✅ Email-based регистрация и аутентификация
+- ✅ Role-based access control (Admin/User)
+- ✅ Безопасное хеширование паролей (bcrypt)
+- ✅ Session management через NextAuth.js
+- ✅ Административная панель управления пользователями
 
-### 🤖 AI Интеграция (готовая архитектура)
-- 📋 Структура для AI-генерации контента
-- 🖼️ Интеграция Unsplash для поиска изображений
-- 📊 OpenAI/Grok API поддержка
+### 🤖 AI Интеграция
+- 📋 Автоматическая генерация SEO-оптимизированных статей
+- 🖼️ Интеграция с Unsplash для поиска изображений
+- 📊 Поддержка Ollama, OpenAI и Grok APIs
+- ✅ Генерация метаданных, тегов и slug автоматически
 
-### 📡 Headless API
-- ✅ REST API для получения статей (`/api/posts`)
-- ✅ Фильтрация по тегам и поиск
-- ✅ Пагинация
-- ✅ Для использования на фронтенде (Next.js, React, Vue, и т.д.)
+### 📡 REST API (Headless)
+- ✅ Полнофункциональный REST API для всех операций
+- ✅ Пагинация и фильтрация
+- ✅ Поддержка поиска, фильтрации по тегам
+- ✅ Используется на любом фронтенде (React, Vue, Angular и т.д.)
+
+### ⚡ Production-Ready Features
+- 🚀 **Rate Limiting** - защита от abuse (100-200 req/min)
+- 💾 **Response Caching** - 10-минутный кеш для быстрого ответа (X-Cache headers)
+- 🔍 **Full-Text Search** - полнотекстовый поиск с русским языком
+- 📊 **Structured Logging** - цветной вывод логов запросов и ошибок
+- 📋 **API Documentation** - интерактивный Swagger/OpenAPI интерфейс
+- 🔐 **Security** - CSRF protection, input validation, JWT sessions
 
 ## 🛠️ Технологический стек
 
-### Backend & Frontend
-- **Next.js 15.2** - App Router, SSR, API Routes
-- **React 18.3** - компоненты с hooks
-- **TypeScript 5.5** - типизация
+### Frontend & Backend
+- **Next.js 15.2** - App Router, SSR, API Routes, Static Generation
+- **React 18.3** - Hooks, Components
+- **TypeScript 5.5** - Type safety
 
-### Базы данных
-- **MongoDB 5.9** - база данных
-- **Mongoose 7.0** - ODM для MongoDB
+### Database & ORM
+- **MongoDB 5.9** - документная база данных
+- **Mongoose 7.0** - ODM для типизированного доступа к данным
 
-### UI & Стили
-- **TailwindCSS 3.4** - утилит-first CSS framework
-- **Radix UI** - доступные компоненты (Dialog, Dropdown, Label, Select, Checkbox)
-- **Lucide React** - иконки
+### UI & Styles
+- **TailwindCSS 3.4** - Utility-first CSS framework
+- **Radix UI** - Accessible components (Dialog, Dropdown, Checkbox, Select)
+- **Lucide React** - Beautiful icons
 
-### Редактирование контента
-- **TipTap 3.23** - WYSIWYG редактор
-  - Поддержка Markdown
-  - Bold, Italic, Headings
-  - Lists
+### Editor
+- **TipTap 3.23** - WYSIWYG editor с поддержкой:
+  - Markdown formatting
+  - Bold, Italic, Underline, Strikethrough
+  - Headings (h1-h6)
+  - Lists (ordered, unordered)
+  - Code blocks
   - Links
   - Highlights
 
-### Аутентификация
-- **NextAuth 4.24** - авторизация
-- **bcrypt 5.1** - хеширование паролей
+### Auth & Security
+- **NextAuth 4.24** - Session-based authentication
+- **bcrypt 5.1** - Password hashing
+- **JWT** - Token-based session
 
-### Валидация
-- **Zod 3.23** - валидация схем
+### Validation & Utils
+- **Zod 3.23** - Runtime schema validation
+- **swagger-ui-react** - Interactive API documentation
+- **swagger-jsdoc** - OpenAPI spec generation
 
-## 📦 Установка
+## 📦 Установка и запуск
 
 ### Требования
 - Node.js 18+
 - npm или yarn
-- MongoDB (локально или облачный сервис)
+- MongoDB (локально, Docker или MongoDB Atlas)
 
-### Шаги установки
+### Быстрый старт
 
 1. **Клонировать репозиторий**
 ```bash
@@ -92,138 +109,243 @@ cd diplomka
 npm install
 ```
 
-3. **Настроить переменные окружения**
-Создать файл `.env.local` (или скопировать из `.env.example`):
+3. **Создать файл `.env.local`**
+```bash
+cp .env.example .env.local
+```
+
+4. **Настроить переменные окружения** (`.env.local`)
 ```env
-# MongoDB
-MONGO_URI=mongodb+srv://username:password@cluster.mongodb.net/neuracms
+# Database
+MONGO_URI=mongodb+srv://user:password@cluster.mongodb.net/neuracms
+MONGODB_URI=${MONGO_URI}
 
 # NextAuth
-NEXTAUTH_SECRET=your-secret-key-here
+NEXTAUTH_SECRET=your-secret-key-here-minimum-32-chars-long
 NEXTAUTH_URL=http://localhost:3001
-NEXTAUTH_DEBUG=true
 
-# AI Features (опционально)
-OPENAI_API_KEY=your-openai-key
-UNSPLASH_ACCESS_KEY=your-unsplash-key
+# Logging
+LOG_LEVEL=info  # debug, info, warn, error
+
+# Optional: AI & Images
+OLLAMA_BASE_URL=http://localhost:11434
+OLLAMA_MODEL=qwen2.5:7b
+UNSPLASH_ACCESS_KEY=your-unsplash-api-key
+OPENAI_API_KEY=your-openai-api-key
 
 # Build
 SKIP_DB_DURING_BUILD=1
 ```
 
-4. **Запустить разработку**
+5. **Запустить dev сервер**
 ```bash
 npm run dev
 ```
 
-5. **Открыть в браузере**
+6. **Открыть в браузере**
 ```
 http://localhost:3001
 ```
 
 ## 📚 Использование
 
-### Регистрация и вход
+### 🔐 Первый запуск - Регистрация
 
 1. Перейти на http://localhost:3001/register
 2. Создать аккаунт с email и паролем
 3. Вы будете автоматически залогированы
-4. Перенаправлены на dashboard
+4. Перенаправлены на `/dashboard`
 
-### Создание статьи
+### 📖 API Документация
 
-1. Перейти в **Dashboard** → **Новая статья**
-2. Заполнить форму:
-   - **Заголовок** - основной заголовок
-   - **Slug** - URL-friendly идентификатор
-   - **Meta заголовок** - SEO meta title
-   - **Meta описание** - SEO description (150-160 символов)
-   - **Краткое описание** - excerpt для списка
-   - **Контент** - основной текст (используйте TipTap редактор)
-   - **Теги** - через запятую
-   - **Изображение** - URL избранного изображения
-3. Выбрать статус: **Draft** или **Published**
-4. Кликнуть **Создать статью**
+**Интерактивный Swagger интерфейс:**
+```
+http://localhost:3001/api-docs
+```
 
-### Просмотр опубликованных статей
+**Raw OpenAPI spec (JSON):**
+```
+http://localhost:3001/api/swagger
+```
 
-- Перейти на **http://localhost:3001/posts**
-- Просмотреть все опубликованные статьи
-- Кликнуть на статью для полного просмотра
+### ✍️ Создание статьи
 
-### Управление пользователями (Admin)
+1. **Через Dashboard:**
+   - Перейти: Dashboard → Новая статья
+   - Заполнить форму
+   - Выбрать статус (Draft или Published)
+   - Кликнуть "Создать"
 
-1. Перейти в **Dashboard** → **Пользователи**
-2. Создать нового пользователя с ролью
-3. Редактировать роли или отключать пользователей
+2. **Через API (Admin only):**
+```bash
+curl -X POST http://localhost:3001/api/admin/ai/generate \
+  -H "Content-Type: application/json" \
+  -d '{
+    "topic": "Machine Learning Basics",
+    "keywords": "ml, ai, machine learning",
+    "length": "medium",
+    "tone": "professional"
+  }'
+```
+
+### 🔍 Просмотр статей
+
+1. **Публичная страница:**
+   - http://localhost:3001/posts - список всех статей
+   - http://localhost:3001/posts/[slug] - отдельная статья
+
+2. **Через API:**
+```bash
+# Список статей
+curl "http://localhost:3001/api/posts?page=1&pageSize=10"
+
+# Одна статья
+curl "http://localhost:3001/api/posts/my-article-slug"
+
+# Поиск
+curl "http://localhost:3001/api/search?q=typescript"
+```
 
 ## 🔌 API Endpoints
 
-### Публичные endpoints
+### 📖 Полная документация
 
-#### GET /api/posts
+Все endpoints полностью задокументированы на **http://localhost:3001/api-docs**
+
+### Примеры основных endpoints
+
+#### GET /api/posts (Публичный)
 Получить список опубликованных статей
 
+```bash
+curl "http://localhost:3001/api/posts?page=1&pageSize=10&search=typescript&tag=programming"
+```
+
 **Query параметры:**
-- `search` - поиск по заголовку, описанию
+- `page` - номер страницы (по умолчанию: 1)
+- `pageSize` - количество элементов (1-50, по умолчанию: 10)
+- `search` - текст поиска
 - `tag` - фильтр по тегу
-- `page` - номер страницы (по умолчанию 1)
-- `pageSize` - размер страницы (по умолчанию 10, макс 50)
+
+#### GET /api/posts/{slug} (Публичный)
+Получить одну статью
+
+```bash
+curl "http://localhost:3001/api/posts/typescript-guide"
+```
+
+#### GET /api/search (Публичный)
+Полнотекстовый поиск
+
+```bash
+curl "http://localhost:3001/api/search?q=react+hooks"
+```
+
+#### POST /api/admin/ai/generate (Admin)
+Генерировать статью с AI
+
+```bash
+curl -X POST http://localhost:3001/api/admin/ai/generate \
+  -H "Content-Type: application/json" \
+  -d '{
+    "topic": "How to Learn TypeScript",
+    "keywords": "typescript, learning, guide",
+    "length": "medium",
+    "tone": "professional",
+    "audience": "Developers"
+  }'
+```
+
+**Параметры:**
+- `topic` ✅ (обязателен) - тема статьи, мин 5 символов
+- `keywords` (опционально) - ключевые слова через запятую
+- `length` ✅ (обязателен) - `short`, `medium` или `long`
+- `tone` ✅ (обязателен) - `professional`, `casual`, `academic`, `friendly`
+- `audience` (опционально) - целевая аудитория
+
+#### GET /api/admin/users (Admin)
+Получить список всех пользователей
+
+```bash
+curl "http://localhost:3001/api/admin/users"
+```
+
+### Rate Limiting (Защита API)
+
+| Endpoint | Лимит | Окно | Возвращает при превышении |
+|----------|-------|------|---|
+| `/api/posts` | 100 | 1 мин | 429 Too Many Requests |
+| `/api/posts/[slug]` | 200 | 1 мин | 429 Too Many Requests |
+| `/api/search` | 30 | 1 мин | 429 Too Many Requests |
+| `/api/admin/ai/generate` | 5 | 1 час | 429 Too Many Requests |
+
+**Response Headers на превышение лимита:**
+```
+X-RateLimit-Limit: 100
+X-RateLimit-Remaining: 0
+X-RateLimit-Reset: 1624521600
+Retry-After: 45
+```
+
+## ⚡ Performance
+
+### Caching (Response Times)
+
+| Endpoint | TTL | Проверка |
+|----------|-----|---------|
+| `/api/posts` | 10 мин | Header `X-Cache: HIT/MISS` |
+| `/api/posts/[slug]` | 10 мин | Header `X-Cache: HIT/MISS` |
+| `/api/search` | 5 мин | Header `X-Cache: HIT/MISS` |
 
 **Пример:**
 ```bash
-curl "http://localhost:3001/api/posts?search=ai&page=1&pageSize=10"
+curl -i http://localhost:3001/api/posts
+
+# В ответе увидите:
+# X-Cache: HIT          (из кеша - быстро)
+# X-Cache: MISS         (из БД - первый раз)
 ```
 
-#### GET /api/posts/[slug]
-Получить отдельную статью по slug
+### Full-Text Search
+
+Использует MongoDB text indexes:
+- Поддержка русского языка
+- Взвешивание полей (title > tags > content)
+- Быстрый поиск вместо regex
+
+### Structured Logging
 
 ```bash
-curl "http://localhost:3001/api/posts/my-article-slug"
+# Запустить с debug логами
+LOG_LEVEL=debug npm run dev
+
+# Пример логов:
+# [2024-05-21T10:30:45.123Z] INFO  [GET] /api/posts
+# [2024-05-21T10:30:46.456Z] WARN  Slow API response: /api/posts { duration: 1050 }
 ```
 
-### Защищенные endpoints (Admin)
+## 🔐 Безопасность
 
-#### POST /api/admin/users
-Создать нового пользователя
+### Реализованные меры
+- ✅ **Password Hashing** - bcrypt с 10 rounds
+- ✅ **JWT Sessions** - через NextAuth.js
+- ✅ **CSRF Protection** - встроена в Next.js
+- ✅ **Role-Based Access** - Admin/User роли
+- ✅ **Input Validation** - Zod schemas
+- ✅ **Rate Limiting** - защита от DDoS
+- ✅ **Secure Headers** - Content-Security-Policy и т.д.
+- ✅ **Error Handling** - безопасные сообщения об ошибках
 
-**Body:**
-```json
-{
-  "name": "John Doe",
-  "email": "john@example.com",
-  "password": "secure-password",
-  "role": "user"
-}
-```
+### Для Production
 
-#### PATCH /api/admin/users/[id]
-Обновить пользователя
-
-**Body:**
-```json
-{
-  "role": "admin",
-  "disabled": false
-}
-```
-
-#### DELETE /api/admin/users/[id]
-Удалить пользователя
-
-#### POST /api/admin/ai/generate
-Генерировать контент с помощью AI (требует OpenAI API key)
-
-**Body:**
-```json
-{
-  "topic": "How to Learn TypeScript",
-  "keywords": "typescript,learning,guide",
-  "length": "1500 words",
-  "tone": "Professional",
-  "audience": "Developers"
-}
-```
+- [ ] Использовать HTTPS (SSL/TLS)
+- [ ] Включить хранилище переменных окружения (например, AWS Secrets Manager)
+- [ ] Настроить CORS правильно
+- [ ] Использовать reverse proxy (nginx)
+- [ ] Добавить monitoring и logging в продакшене
+- [ ] Регулярно обновлять зависимости
+- [ ] Настроить backups БД
+- [ ] Использовать managed MongoDB (Atlas)
 
 ## 📁 Структура проекта
 
@@ -231,59 +353,56 @@ curl "http://localhost:3001/api/posts/my-article-slug"
 diplomka/
 ├── app/                          # Next.js App Router
 │   ├── api/                      # API routes
-│   │   ├── auth/                # NextAuth
-│   │   ├── admin/               # Admin endpoints
-│   │   └── posts/               # Public API
-│   ├── dashboard/               # Protected routes
-│   ├── posts/                   # Public pages
-│   ├── profile/                 # User profile
-│   ├── signin/                  # Auth pages
-│   └── register/
+│   │   ├── auth/                # Authentication endpoints
+│   │   ├── admin/               # Admin-only endpoints
+│   │   ├── posts/               # Public API for articles
+│   │   ├── search/              # Full-text search
+│   │   ├── swagger/             # OpenAPI spec
+│   │   └── swagger/
+│   ├── api-docs/                # Swagger UI page
+│   ├── dashboard/               # Protected admin routes
+│   ├── posts/                   # Public article pages
+│   ├── signin/                  # Login page
+│   ├── register/                # Registration page
+│   ├── layout.tsx               # Root layout
+│   └── page.tsx                 # Home page
 ├── components/                   # React components
-│   ├── dashboard/               # Dashboard components
-│   ├── ui/                      # UI components (Button, Input, etc)
-│   └── article/                 # Article components
-├── lib/                         # Utilities
-│   ├── auth.ts                 # NextAuth config
+│   ├── dashboard/               # Dashboard UI components
+│   ├── site/                    # Public site components
+│   ├── article/                 # Article components
+│   ├── ui/                      # Reusable UI (Button, Input, etc)
+│   ├── providers/               # Context providers
+│   └── editor/                  # TipTap editor
+├── lib/                         # Utilities & services
+│   ├── auth.ts                 # NextAuth configuration
 │   ├── mongodb.ts              # MongoDB client
 │   ├── mongoose.ts             # Mongoose connection
-│   ├── ai.ts                   # AI utilities
-│   └── validators.ts           # Zod schemas
+│   ├── ai.ts                   # AI generation (Ollama)
+│   ├── cache.ts                # In-memory caching
+│   ├── rateLimit.ts            # Rate limiting
+│   ├── logger.ts               # Structured logging
+│   ├── errorHandler.ts         # Error handling utilities
+│   ├── swagger.ts              # OpenAPI specification
+│   ├── validators.ts           # Zod validation schemas
+│   └── utils.ts                # Helper functions
 ├── models/                      # Mongoose schemas
-│   └── Article.ts
-├── styles/                      # Global styles
+│   └── Article.ts              # Article schema
+├── styles/                      # Global CSS
 ├── middleware.ts                # Next.js middleware
 ├── package.json
 ├── tsconfig.json
-└── tailwind.config.ts
+├── next.config.mjs
+├── tailwind.config.ts
+└── README.md
 ```
-
-## 🔐 Безопасность
-
-### Реализованные меры
-- ✅ Password hashing с bcrypt (10 rounds)
-- ✅ JWT sessions через NextAuth
-- ✅ CSRF protection встроена в Next.js
-- ✅ Role-based access control (RBAC)
-- ✅ Environment variables для секретов
-- ✅ Sanitized user inputs
-
-### Рекомендации для production
-- [ ] Включить HTTPS
-- [ ] Использовать более сложные пароли
-- [ ] Регулярно обновлять зависимости
-- [ ] Добавить rate limiting
-- [ ] Использовать environment-specific конфиги
-- [ ] Настроить CORS если нужно
-- [ ] Добавить логирование и мониторинг
 
 ## 🚀 Deployment
 
-### Vercel (рекомендуется)
+### Vercel (рекомендуется для Next.js)
 
 1. Залить код на GitHub
 2. Импортировать проект на Vercel
-3. Настроить environment variables
+3. Настроить Environment Variables
 4. Deploy автоматически при push
 
 ### Docker
@@ -292,79 +411,71 @@ diplomka/
 FROM node:18-alpine
 WORKDIR /app
 COPY package*.json ./
-RUN npm ci
+RUN npm ci --only=production
 COPY . .
 RUN npm run build
 EXPOSE 3000
 CMD ["npm", "start"]
 ```
 
-## 📊 Performance
+```bash
+docker build -t neuracms .
+docker run -p 3000:3000 -e MONGO_URI=... neuracms
+```
 
-- ⚡ **Реневалидация** - ISR (incremental static regeneration) для статей
-- 🗂️ **Кэширование** - оптимизированные запросы к MongoDB
-- 📸 **Изображения** - поддержка Unsplash URL с оптимизацией
-- 🔍 **Индексы** - правильно настроены на `slug` поле
-
-## 🔧 Разработка
-
-### Локальное тестирование
+### Self-hosted (VPS)
 
 ```bash
-# Запустить с debug логами
-NEXTAUTH_DEBUG=true npm run dev
+# SSH в VPS
+ssh user@your-vps.com
 
-# Запустить linter
-npm run lint
-
-# Build для production
+# Клонировать и запустить
+git clone <repo-url>
+cd diplomka
+npm install
 npm run build
 npm start
+
+# Использовать PM2 для background процесса
+npm install -g pm2
+pm2 start "npm start" --name "neuracms"
+pm2 startup
+pm2 save
 ```
 
-### Тестирование MongoDB
+## 📊 Мониторинг и логи
 
 ```bash
-# Используем встроенные скрипты
-node test-mongo.js
-node test-mongo-nonsrv.js
+# Debug режим (все логи)
+LOG_LEVEL=debug npm run dev
+
+# Production режим (только важные)
+LOG_LEVEL=info npm start
+
+# Смотреть логи PM2
+pm2 logs neuracms
 ```
 
-## 📖 Документация компонентов
+## 🤝 Contributing
 
-### TipTap Editor
-- Встроен в форму создания/редактирования статьи
-- Поддерживает: Bold, Italic, H2, Lists, Links, Highlights
-- Сохраняет в JSON формате для хранения
+Это учебный проект. Если хотите улучшить:
 
-### ArticleTable
-- Отображает список статей в dashboard
-- Поддерживает поиск по названию и slug
-- Empty state когда нет статей
+1. Fork репозиторий
+2. Создать feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to branch (`git push origin feature/AmazingFeature`)
+5. Open Pull Request
 
-### EmptyState
-- Универсальный компонент для пустых состояний
-- Кастомизируемые иконки и действия
+## 📝 Лицензия
 
-## 🐛 Известные проблемы и TODO
+MIT License - смотреть [LICENSE](LICENSE) файл для деталей
 
-- [ ] AI интеграция требует активации OpenAI API key
-- [ ] Unsplash интеграция требует API key
-- [ ] Нужны unit тесты
-- [ ] Нужны e2e тесты (Cypress/Playwright)
-- [ ] Улучшить обработку ошибок
-- [ ] Добавить webhooks для интеграций
-- [ ] Добавить версионирование контента
+## 📞 Контакты
 
-## 📞 Поддержка
-
-Для вопросов и issues создавайте issues в репозитории.
-
-## 📄 Лицензия
-
-MIT
+- 📧 Email: your-email@example.com
+- 🐙 GitHub: [@yourname](https://github.com/yourname)
+- 🌐 Website: [your-website.com](https://your-website.com)
 
 ---
 
-**Создано с ❤️ для управления контентом**
-"# diplomdone" 
+**Made with ❤️ using Next.js, MongoDB, and TypeScript**
